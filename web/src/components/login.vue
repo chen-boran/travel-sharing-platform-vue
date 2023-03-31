@@ -16,12 +16,12 @@
                 <input id="image-code-input" class="form-control" type="text" placeholder="验证码"
                        v-model="member.imageCode">
                 <div class="input-group-addon" id="image-code-addon">
-                  <img id="image-code" alt="验证码" v-on:click="loadImageCode()"/>
+                  <img id="image-code" alt="验证码" @click="loadImageCode()"/>
                 </div>
               </div>
             </div>
             <div class="form-group">
-              <button v-on:click="login()" class="btn btn-primary btn-block submit-button">
+              <button @click="login()" class="btn btn-primary btn-block submit-button">
                 登&nbsp;&nbsp;录
               </button>
             </div>
@@ -31,8 +31,8 @@
                   <input type="checkbox" class="remember" v-model="remember"> 记住密码
                 </label>
                 <div class="pull-right">
-                  <a href="javascript:;" v-on:click="toForgetDiv()">忘记密码</a>&nbsp;
-                  <a href="javascript:;" v-on:click="toRegisterDiv()">我要注册</a>
+                  <a href="javascript:;" @click="toForgetDiv()">忘记密码</a>&nbsp;
+                  <a href="javascript:;" @click="toRegisterDiv()">我要注册</a>
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@
                        placeholder="手机验证码" v-model="memberRegister.smsCode">
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" id="register-send-code-btn"
-                          v-on:click="sendSmsForRegister()">发送验证码
+                          @click="sendSmsForRegister()">发送验证码
                   </button>
                 </div>
               </div>
@@ -85,12 +85,12 @@
               <span v-show="registerConfirmPasswordValidate === false" class="text-danger">确认密码和密码一致</span>
             </div>
             <div class="form-group">
-              <button class="btn btn-primary btn-block submit-button" v-on:click="register()">
+              <button class="btn btn-primary btn-block submit-button" @click="register()">
                 注&nbsp;&nbsp;册
               </button>
             </div>
             <div class="form-group to-login-div">
-              <a href="javascript:;" v-on:click="toLoginDiv()">我要登录</a>
+              <a href="javascript:;" @click="toLoginDiv()">我要登录</a>
             </div>
           </div>
           <div class="forget-div" v-show="MODAL_STATUS === STATUS_FORGET">
@@ -109,7 +109,7 @@
                        id="forget-mobile-code" class="form-control"
                        placeholder="手机验证码" v-model="memberForget.smsCode">
                 <div class="input-group-append">
-                  <button v-on:click="sendSmsForForget()"
+                  <button @click="sendSmsForForget()"
                           class="btn btn-outline-secondary" id="forget-send-code-btn">
                     发送验证码
                   </button>
@@ -132,12 +132,12 @@
               <span v-show="forgetConfirmPasswordValidate === false" class="text-danger">确认密码和密码一致</span>
             </div>
             <div class="form-group">
-              <button v-on:click="resetPassword()" class="btn btn-primary btn-block submit-button">
+              <button @click="resetPassword()" class="btn btn-primary btn-block submit-button">
                 重&nbsp;&nbsp;置
               </button>
             </div>
             <div class="form-group to-login-div">
-              <a href="javascript:;" v-on:click="toLoginDiv()">我要登录</a>
+              <a href="javascript:;" @click="toLoginDiv()">我要登录</a>
             </div>
           </div>
         </div>

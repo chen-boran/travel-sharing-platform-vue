@@ -1,19 +1,19 @@
 <template>
   <div class="pagination" role="group" aria-label="分页">
-    <button type="button" class="btn btn-outline-dark" v-bind:disabled="page === 1" v-on:click="selectPage(1)">
+    <button type="button" class="btn btn-outline-dark" v-bind:disabled="page === 1" @click="selectPage(1)">
       1
     </button>
-    <button type="button" class="btn btn-outline-dark" v-bind:disabled="page === 1" v-on:click="selectPage(page - 1)">
+    <button type="button" class="btn btn-outline-dark" v-bind:disabled="page === 1" @click="selectPage(page - 1)">
       上一页
     </button>
     <button v-for="p in pages" v-bind:id="'page-' + p" type="button"
-            v-bind:class="{'btn-primary active':page == p}" class="btn btn-outline-dark" v-on:click="selectPage(p)">
+            v-bind:class="{'btn-primary active':page == p}" class="btn btn-outline-dark" @click="selectPage(p)">
       {{p}}
     </button>
-    <button type="button" class="btn btn-outline-dark" v-bind:disabled="page === pageTotal" v-on:click="selectPage(page + 1)">
+    <button type="button" class="btn btn-outline-dark" v-bind:disabled="page === pageTotal" @click="selectPage(page + 1)">
       下一页
     </button>
-    <button type="button" class="btn btn-outline-dark" v-bind:disabled="page === pageTotal" v-on:click="selectPage(pageTotal)">
+    <button type="button" class="btn btn-outline-dark" v-bind:disabled="page === pageTotal" @click="selectPage(pageTotal)">
       {{pageTotal||1}}
     </button>
   </div>

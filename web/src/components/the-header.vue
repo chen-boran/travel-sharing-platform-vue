@@ -40,8 +40,8 @@
             </el-menu-item>
 <!--          </ul>-->
           <span v-show="loginMember.id" class="text-white pr-3">您好：{{loginMember.name}}</span>
-          <button v-show="loginMember.id" v-on:click="logout()" class="btn btn-outline-light my-2 my-sm-0">退出登录</button>
-          <button v-show="!loginMember.id" v-on:click="openLoginModal()" class="btn btn-outline-light my-2 my-sm-0">登录/注册</button>
+          <button v-show="loginMember.id" @click="logout()" class="btn btn-outline-light my-2 my-sm-0">退出登录</button>
+          <button v-show="!loginMember.id" @click="openLoginModal()" class="btn btn-outline-light my-2 my-sm-0">登录/注册</button>
         </el-menu>
       </div>
     </nav>

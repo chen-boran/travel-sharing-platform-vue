@@ -18,7 +18,7 @@
               <span class="price-now text-danger"><i class="fa fa-yen"></i>&nbsp;{{course.price}}&nbsp;&nbsp;</span>
             </p>
             <p class="course-head-button-links">
-              <a v-show="!memberCourse.id" v-on:click="enroll()" class="btn btn-lg btn-primary btn-shadow" href="javascript:;">立即报名</a>
+              <a v-show="!memberCourse.id" @click="enroll()" class="btn btn-lg btn-primary btn-shadow" href="javascript:;">立即报名</a>
               <a v-show="memberCourse.id" href="#" class="btn btn-lg btn-success btn-shadow disabled">您已报名</a>
             </p>
           </div>
@@ -46,7 +46,7 @@
               </div>
               <div class="tab-pane" id="chapter">
                 <div v-for="(chapter, i) in chapters" class="chapter">
-                  <div v-on:click="doFolded(chapter, i)" class="chapter-chapter">
+                  <div @click="doFolded(chapter, i)" class="chapter-chapter">
                     <span>{{chapter.name}}</span>
                     <span class="pull-right">
                       <i v-show="chapter.folded" class="fa fa-plus-square" aria-hidden="true"></i>
@@ -57,7 +57,7 @@
                     <table class="table table-striped">
                       <tr v-for="(s, j) in chapter.sections" class="chapter-section-tr">
                         <td class="col-sm-8 col-xs-12">
-                          <div v-on:click="play(s)" class="section-title">
+                          <div @click="play(s)" class="section-title">
                             <i class="fa fa-video-camera d-none d-sm-inline"></i>&nbsp;&nbsp;
                             <span class="d-none d-sm-inline">第{{j+1}}节&nbsp;&nbsp;</span>
                             {{s.title}}
